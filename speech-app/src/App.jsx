@@ -218,6 +218,8 @@ function HistoryItem({ item, index, onDelete }) {
 }
 
 export default function App() {
+  const API = "https://speech-app-8134.onrender.com"
+
   const [file, setFile] = useState(null)
   const [text, setText] = useState("")
   const [history, setHistory] = useState([])
@@ -232,7 +234,7 @@ export default function App() {
 
   const fetchHistory = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/history")
+      const res = await axios.get(`${API}/history`)
       setHistory(Array.isArray(res.data) ? res.data : [])
     } catch (error) {
       console.error("History fetch failed:", error)
@@ -256,7 +258,7 @@ export default function App() {
       setLoading(true)
       setText("Processing transcription...")
 
-      const res = await axios.post("http://localhost:5000/upload", formData, {
+      const res = await axios.post(`${API}/upload`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
@@ -301,7 +303,7 @@ export default function App() {
           setLoading(true)
           setText("Processing recording...")
 
-          const res = await axios.post("http://localhost:5000/upload", formData, {
+          const res = await axios.post(`${API}/upload`, formData, {
             headers: {
               "Content-Type": "multipart/form-data",
             },
@@ -344,7 +346,7 @@ export default function App() {
 
   const deleteHistoryItem = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/history/${id}`)
+      await axios.delete(`${API}/history/${id}`)
       await fetchHistory()
     } catch (error) {
       console.error("Delete failed:", error)
