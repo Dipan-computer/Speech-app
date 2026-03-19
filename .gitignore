@@ -1,0 +1,17 @@
+node_modules
+backend/node_modules
+speech-app/node_modules
+
+.env
+backend/.env
+speech-app/.env
+
+uploads
+backend/uploads
+
+dist
+speech-app/dist
+
+.vscode
+*.log
+.DS_Store
