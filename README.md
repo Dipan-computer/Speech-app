@@ -107,9 +107,11 @@ npm run dev
 
 
 
-## 📸 Screenshots
+##  Screenshots
 
-(Add screenshots here later)
+<img width="1743" height="1035" alt="Screenshot 2026-03-19 095303" src="https://github.com/user-attachments/assets/7ba8d835-7827-460b-bc11-821fdc53a20d" />
+
+<img width="1919" height="1127" alt="Screenshot 2026-03-19 194556" src="https://github.com/user-attachments/assets/a39f3288-21f7-4fd2-9448-869a6fc87490" />
 
 
 
